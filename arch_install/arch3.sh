@@ -105,16 +105,6 @@ elif [[ $xfce_set == 0 ]]; then
   echo 'Скачивание и установка конфига XFCE пропущена.'
 fi
 
-echo 'Убираем меню граб для выбора системы?'
-read -p "1 - Да, 0 - Нет: " grub_set
-if [[ $grub_set == 1 ]]; then
-  # wget git.io/grub.tar.gz
-  sudo tar -xzf grub.tar.gz -C /
-  sudo grub-mkconfig -o /boot/grub/grub.cfg
-elif [[ $grub_set == 0 ]]; then
-  echo 'Пропускаем.'
-fi
-
 echo 'Установить conky?'
 read -p "1 - Да, 0 - Нет: " conky_set
 if [[ $conky_set == 1 ]]; then
