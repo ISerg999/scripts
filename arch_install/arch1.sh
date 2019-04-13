@@ -14,7 +14,7 @@ timedatectl set-ntp true
 echo '2.4.2 Форматирование дисков'
 mkfs.ext2  /dev/sda2 -L boot
 mkfs.ext3  /dev/sda3 -L root
-mkswap /dev/sda1 -L swap
+# mkswap /dev/sda1 -L swap
 # mkfs.ext4  /dev/sda4 -L home
 
 echo '2.4.3 Монтирование дисков'
