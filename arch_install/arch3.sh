@@ -38,9 +38,11 @@ echo 'Установка программ'
 # screenfetch - терминальная утилита для вывода информации о системе
 # guvcview - для работы с веб-камерой
 # evince - приложение для просмотра документов (pdf, djvu, ...)
+# vim - текстовый редактор
+# mplayer - консольный медиаплеер
 # * freemind - приложение для создания диаграмм связей
 # * pavucontrol - утилита для регулировки звука
-sudo pacman -S firefox firefox-i18n-ru ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils pulseaudio file-roller gvfs gvfs-afc gvfs-smb gvfs-gphoto2 gvfs-mtp gvfs-goa gvfs-nfs aspell-ru libreoffice libreoffice-fresh-ru vlc clementine gparted qbittorrent speedcrunch gnupg eog git ffmpeg librsvg thunderbird thunderbird-i18n-ru jre8-openjdk java-openjfx audacity chromium gimp openexr screenfetch guvcview evince --noconfirm
+sudo pacman -S firefox firefox-i18n-ru ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils pulseaudio file-roller gvfs gvfs-afc gvfs-smb gvfs-gphoto2 gvfs-mtp gvfs-goa gvfs-nfs aspell-ru libreoffice libreoffice-fresh-ru vlc clementine gparted qbittorrent speedcrunch gnupg eog git ffmpeg librsvg thunderbird thunderbird-i18n-ru jre8-openjdk java-openjfx audacity chromium gimp openexr screenfetch guvcview evince vim mplayer --noconfirm
 
 # timeshift - резервное копирование системы
 # flameshot-git - для создания и редактирования скриншотов
@@ -67,12 +69,14 @@ if [[ $i3wm_set == 1 ]]; then
 	# lxterminal - легкий терминал
 	# scrot - создание снимков экрана из консоли
 	# feh - легкий просмотрщик изображений, также позволяет задавать background
+	# clipit
 	# --- sudo pacman -S dmenu --noconfirm --- 
 	# * thunar - файловый графический менеджер (если xfce4 не установлен)
-	# yay -S ttf-font-awesome terminus-ttf xkblayout-state lxappearance --noconfirm
-	# sudo pacman -S i3 --noconfirm
-	# yay -S i3-gaps polybar rofi --noconfirm
-	# sudo pacman -S compton htop lxterminal scrot --noconfirm
+	# --- terminus-ttf
+	yay -S ttf-font-awesome xkblayout-state lxappearance --noconfirm
+	sudo pacman -S i3 feh --noconfirm
+	yay -S i3-gaps polybar rofi clipit --noconfirm
+	sudo pacman -S compton htop lxterminal scrot --noconfirm
 elif [[ $i3wm_set == 0 ]]; then
 	echo 'Установка i3wm пропущена.'
 fi
@@ -96,7 +100,7 @@ if [[ $xfce_set == 1 ]]; then
   
   echo 'Ставим лого ArchLinux в меню'
   wget https://raw.githubusercontent.com/ISerg999/scripts/master/arch_install/archlinux_logo.png
-  sudo mv -f ~/Downloads/arch_logo.png /usr/share/pixmaps/arch_logo.png
+  sudo mv -f ~/Downloads/archlinux_logo.png /usr/share/pixmaps/arch_logo.png
 
   echo 'Ставим обои на рабочий стол'
   wget https://raw.githubusercontent.com/ISerg999/scripts/master/arch_install/bg.jpg
