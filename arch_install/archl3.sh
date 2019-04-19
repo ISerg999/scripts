@@ -19,7 +19,7 @@ xdg-user-dirs-update
 
 echo 'Установка программ'
 pmsn firefox firefox-i18n-ru ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils pulseaudio file-roller gvfs gvfs-afc gvfs-smb gvfs-gphoto2 gvfs-mtp gvfs-goa gvfs-nfs aspell-ru libreoffice libreoffice-fresh-ru gparted qbittorrent speedcrunch gnupg eog git ffmpeg librsvg thunderbird thunderbird-i18n-ru jre8-openjdk java-openjfx audacity chromium gimp openexr screenfetch guvcview evince vim mplayer
-ysn timeshift flameshot-git xflux sublime-text-dev hunspell-ru pamac-aur cherrytree skypeforlinux-stable-bin viber
+ysn timeshift flameshot-git xflux atom-editor-bin hunspell-ru pamac-aur cherrytree skypeforlinux-stable-bin viber
 
 echo 'Установка тем'
 ysn papirus-maia-icon-theme-git breeze-default-cursor-theme

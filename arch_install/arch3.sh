@@ -47,7 +47,7 @@ sudo pacman -S firefox firefox-i18n-ru ufw qt4 f2fs-tools dosfstools ntfs-3g als
 # timeshift - резервное копирование системы
 # flameshot-git - для создания и редактирования скриншотов
 # xflux - утилита автоматического изменение цветности экрана в зависимости от времени суток
-# sublime-text-dev - текстовый редактор
+# atom-editor-bin - текстовый редактор
 # hunspell-ru - программа для проверки орфографии
 # pamac-aur - оконная программа для установки и удаления приложений
 # notepadqq - клон текстового редактора notepad++
@@ -56,7 +56,7 @@ sudo pacman -S firefox firefox-i18n-ru ufw qt4 f2fs-tools dosfstools ntfs-3g als
 # * dropbox - облачное хранение
 # * skypeforlinux-stable-bin - skype
 # * viber - Viber
-yay -S timeshift flameshot-git xflux sublime-text-dev hunspell-ru pamac-aur notepadqq yandex-browser-betta cherrytree --noconfirm
+yay -S timeshift flameshot-git xflux atom-editor-bin hunspell-ru pamac-aur notepadqq yandex-browser-betta cherrytree --noconfirm
 
 echo 'Установить i3wm?'
 read -p "1 - Да, 0 - Нет: " i3wm_set
