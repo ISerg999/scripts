@@ -25,7 +25,6 @@ echo 'Установка программ'
 # qbittorrent - закачка торрентов
 # speedcrunch - калькулятор навароченный
 # gnupg - шифрование
-# eog - просмотр картинок
 # git - программа для контроля версий
 # ffmpeg - кодеки для видео
 # librsvg - библиотека для просмотра svg графики
@@ -40,9 +39,10 @@ echo 'Установка программ'
 # evince - приложение для просмотра документов (pdf, djvu, ...)
 # vim - текстовый редактор
 # mplayer - консольный медиаплеер
+# * eog - просмотр картинок
 # * freemind - приложение для создания диаграмм связей
 # * pavucontrol - утилита для регулировки звука
-sudo pacman -S firefox firefox-i18n-ru ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils pulseaudio file-roller gvfs gvfs-afc gvfs-smb gvfs-gphoto2 gvfs-mtp gvfs-goa gvfs-nfs aspell-ru libreoffice libreoffice-fresh-ru vlc clementine gparted qbittorrent speedcrunch gnupg eog git ffmpeg librsvg thunderbird thunderbird-i18n-ru jre8-openjdk java-openjfx audacity chromium gimp openexr screenfetch guvcview evince vim mplayer --noconfirm
+sudo pacman -S firefox firefox-i18n-ru ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils pulseaudio file-roller gvfs gvfs-afc gvfs-smb gvfs-gphoto2 gvfs-mtp gvfs-goa gvfs-nfs aspell-ru libreoffice libreoffice-fresh-ru vlc clementine gparted qbittorrent speedcrunch gnupg git ffmpeg librsvg thunderbird thunderbird-i18n-ru jre8-openjdk java-openjfx audacity chromium gimp openexr screenfetch guvcview evince vim mplayer --noconfirm
 
 # timeshift - резервное копирование системы
 # flameshot-git - для создания и редактирования скриншотов
@@ -53,10 +53,11 @@ sudo pacman -S firefox firefox-i18n-ru ufw qt4 f2fs-tools dosfstools ntfs-3g als
 # notepadqq - клон текстового редактора notepad++
 # yandex-browser-betta - Yandex браузер (пока нужен)
 # cherrytree - древовидный блокнот
+# photoqt - просмотр картинок
 # * dropbox - облачное хранение
 # * skypeforlinux-stable-bin - skype
 # * viber - Viber
-yay -S timeshift flameshot-git xflux atom-editor-bin hunspell-ru pamac-aur notepadqq yandex-browser-betta cherrytree --noconfirm
+yay -S timeshift flameshot-git xflux atom-editor-bin hunspell-ru pamac-aur notepadqq yandex-browser-betta cherrytree photoqt --noconfirm
 
 echo 'Установить i3wm?'
 read -p "1 - Да, 0 - Нет: " i3wm_set
@@ -70,7 +71,7 @@ if [[ $i3wm_set == 1 ]]; then
 	# scrot - создание снимков экрана из консоли
 	# feh - легкий просмотрщик изображений, также позволяет задавать background
 	# clipit
-	# --- sudo pacman -S dmenu --noconfirm --- 
+	# --- sudo pacman -S dmenu --noconfirm ---
 	# * thunar - файловый графический менеджер (если xfce4 не установлен)
 	# --- terminus-ttf
 	yay -S ttf-font-awesome xkblayout-state lxappearance --noconfirm
@@ -97,7 +98,7 @@ if [[ $xfce_set == 1 ]]; then
   sudo rm -rf ~/.config/xfce4/panel/
   sudo rm -rf ~/.config/xfce4/*
   sudo tar -xzf xfce4.tar.gz -C ~/
-  
+
   echo 'Ставим лого ArchLinux в меню'
   wget https://raw.githubusercontent.com/ISerg999/scripts/master/arch_install/archlinux_logo.png
   sudo mv -f ~/Downloads/archlinux_logo.png /usr/share/pixmaps/arch_logo.png

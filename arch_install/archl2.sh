@@ -12,7 +12,7 @@ ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 
 echo 'Добавляем русскую локаль системы'
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
-echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
+echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
 echo 'Обновим текущую локаль системы'
 locale-gen
 
@@ -27,7 +27,7 @@ mkinitcpio -p linux
 
 echo 'Устанавливаем загрузчик'
 pacman -Syy
-pmsn grub 
+pmsn grub
 grub-install /dev/sda
 echo 'Обновляем grub.cfg'
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -60,6 +60,9 @@ elif [[ $vm_setting == 1 ]]; then
   pms xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils
 fi
 
+echo 'Ставим xfce4'
+pmsn xfce4 xfce4-goodies
+
 echo 'Ставим шрифты'
 pmsn ttf-liberation ttf-dejavu noto-fonts noto-fonts-extra ttf-roboto ttf-droid opendesktop-fontsttf-bitstream-vera
 echo 'Ставим консольные приложения'
@@ -72,5 +75,5 @@ echo 'Установка завершена! Перезагрузите сист
 echo 'Если хотите подключить AUR, установить мои конфиги XFCE, тогда после перезагрзки и входа в систему, установите wget (sudo pacman -S wget) и выполните команду:'
 echo 'wget https://raw.githubusercontent.com/ISerg999/scripts/master/arch_install/archl3.sh && sh archl3.sh'
 
-echo 'pacman -S --noconfirm xfce4 xfce4-goodies'
+# echo 'pacman -S --noconfirm xfce4 xfce4-goodies'
 exit
