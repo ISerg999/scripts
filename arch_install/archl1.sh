@@ -19,17 +19,19 @@ mkfs.ext3  /dev/sda3 -L root
 # mkfs.ext4  /dev/sda4 -L home
 
 echo 'Монтирование дисков'
+swapon /dev/sda1
 mount /dev/sda3 /mnt
 mkdir /mnt/{boot,home}
 mount /dev/sda2 /mnt/boot
-swapon /dev/sda1
 mount /dev/sda4 /mnt/home
 
-echo 'Выбор зеркал для загрузки. Ставим зеркало от Яндекс'
-echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
+echo 'Выбор зеркал для загрузки'
+echo "Server = https://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
+echo "Server = https://mirror.aur.rocks/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
+echo "Server = http://mirror.rol.ru/archlinux/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
 
 echo 'Установка основных пакетов'
-pacstrap /mnt base base-devel
+pacstrap /mnt base base-devel bash-completion
 
 echo 'Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab

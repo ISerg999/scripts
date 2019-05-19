@@ -54,7 +54,7 @@ echo "Куда устанавливем Arch Linux на виртуальную �
 read -p "1 - Да, 0 - Нет: " vm_setting
 echo 'Ставим иксы и драйвера'
 if [[ $vm_setting == 0 ]]; then
-  pmsn nvidia-390xx nvidia-390xx-settings nvidia-390xx-utils opencl-nvidia-390xx lib32-nvidia-390xx-utils lib32-opencl-nvidia-390xx mesa lib32-mesa
+  pmsn nvidia-390xx nvidia-390xx-settings lib32-nvidia-390xx-utils opencl-nvidia-390xx lib32-opencl-nvidia-390xx
   pms xorg-server xorg-xinit
 elif [[ $vm_setting == 1 ]]; then
   pms xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils
@@ -62,18 +62,18 @@ fi
 
 echo 'Ставим xfce4'
 pmsn xfce4 xfce4-goodies
+pacman -Rs ristretto
 
 echo 'Ставим шрифты'
-pmsn ttf-liberation ttf-dejavu noto-fonts noto-fonts-extra ttf-roboto ttf-droid opendesktop-fontsttf-bitstream-vera
+pmsn ttf-liberation ttf-dejavu noto-fonts-extra ttf-roboto ttf-droid ttf-bitstream-vera
 echo 'Ставим консольные приложения'
-pmsn cabextract cvs p7zip unrar zip unzip unarj atool mc mtools fuse wget exfat-utils
+pmsn p7zip unrar zip unzip lha atool mc mtools fuse wget exfat-utils f2fs-tools dosfstools ntfs-3g openexr alsa-lib alsa-utils gnupg git vim mplayer htop compton xclip
 echo 'Ставим сеть'
-pmsn networkmanager network-manager-applet ppp
+pmsn networkmanager network-manager-applet ppp ufw
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
 echo 'Установка завершена! Перезагрузите систему.'
 echo 'Если хотите подключить AUR, установить мои конфиги XFCE, тогда после перезагрзки и входа в систему, установите wget (sudo pacman -S wget) и выполните команду:'
 echo 'wget https://raw.githubusercontent.com/ISerg999/scripts/master/arch_install/archl3.sh && sh archl3.sh'
 
-# echo 'pacman -S --noconfirm xfce4 xfce4-goodies'
 exit
